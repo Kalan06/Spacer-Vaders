@@ -18,13 +18,15 @@ def run_game():
   ship = Ship(ai_settings, screen)
   # Make a group to store bullets in.
   bullets = Group()
+  aliens = Group()
   bg_color = (ai_settings.bg_color)
+  gf.create_fleet(ai_settings, screen, aliens)
 
   while True:
     gf.check_events(ai_settings, screen, ship, bullets)
     ship.update()
     gf.update_bullets(bullets)
-    gf.update_screen(ai_settings, screen, ship, alien, bullets)
+    gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
     # Get rid of bullets that have disappeared.
     for bullet in bullets.copy():
