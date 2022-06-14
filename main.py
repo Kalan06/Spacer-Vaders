@@ -20,7 +20,7 @@ def run_game():
   bullets = Group()
   aliens = Group()
   bg_color = (ai_settings.bg_color)
-  gf.create_fleet(ai_settings, screen, ship, aliens)
+  gf.create_fleet(ai_settings, screen, aliens)
 
   while True:
     gf.check_events(ai_settings, screen, ship, bullets)
